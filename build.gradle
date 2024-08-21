@@ -1,0 +1,22 @@
+plugins {
+    id "antlr"
+    id "java-library"
+}
+
+group = "net.cleptomania"
+version = "1.0.0"
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+dependencies {
+    antlr "org.antlr:antlr4:4.13.2"
+    implementation 'commons-io:commons-io:2.16.1'
+    implementation 'org.apache.commons:commons-lang3:3.16.0'
+}
+
+generateGrammarSource {
+    arguments += ["-visitor"]
+}
